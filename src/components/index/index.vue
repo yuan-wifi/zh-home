@@ -5,12 +5,8 @@
       </div>
       <div class="phone">13578961234</div>
     </div>
-    <div class="header">
-      <div class="item">首页</div>
-      <div class="item">关于我</div>
-      <div class="item">设计作品</div>
-      <div class="item"><router-link tag="a" to="/articlelist">设计随笔</router-link></div>
-    </div>
+    <headerm>
+    </headerm>
     <div class="carousel">
       <transition-group tag="ul" class="clearfix1 slide" name="image">
         <li class="item item1" :key="1" v-show="1===mark"></li>
@@ -102,10 +98,20 @@
           </div>
       </div>
     </div>
+
+    <div class="contact">
+      <div><h3>联系方式</h3></div>
+      <p>
+        <span>电话：12345678910</span>
+        <span>地址：四川省成都市成华区</span>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
+import header from '@/components/header/header'
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -129,6 +135,9 @@ export default {
     start () {
       setInterval(this.autoPlay, 3000)
     }
+  },
+  components: {
+    'headerm': header
   }
 }
 </script>
@@ -163,18 +172,7 @@ export default {
       @media screen and (max-width:500px)
         .phone
           display: none
-    .header
-      display: flex
-      text-align: center
-      background: rgb(10, 10, 10)
-      color: #fff
-      line-height: 40px
-      height: 40px
-      font-size: 14px
-      .item
-        flex: 1
-        a
-          color: #fff
+
     .carousel
       width: 100%
       height: 260px
@@ -292,4 +290,20 @@ export default {
             line-height: 66px
             font-size: 16px
             text-align: center
+    .contact
+      margin: 40px 0px 0px 0px
+      background: #545454
+      text-align: center
+      h3
+        font-size: 16px
+        color: #B9B9B9
+        line-height: 30px
+        height: 30px
+        padding-top: 5px
+      p
+        line-height: 25px
+        font-size: 12px
+        color: #B9B9B9
+        span
+          display: block
 </style>
